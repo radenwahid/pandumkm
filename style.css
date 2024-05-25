@@ -1,0 +1,4 @@
+/* Tambahkan transisi untuk mode tema */
+html.transition-theme {
+  transition: background-color 1000ms ease, color 1000ms ease;
+}
