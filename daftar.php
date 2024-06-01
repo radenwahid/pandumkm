@@ -131,7 +131,7 @@ if (isset($_POST["daftar"])) {
                     <button class="py-2 text-white duration-300 bg-blue-700 rounded-xl hover:bg-blue-600 hover:scale-105" type="submit" name="daftar">Register</button>
                 </form>
                 <div class="flex items-center justify-between mt-3 text-xs">
-                    <p class="dark:text-white">punya akun?<a href="index.php" class="ml-2 dark:text-white">login</a></p>
+                    <p class="dark:text-white">sudah punya akun?<a href="index.php" class="ml-2 dark:text-white">login</a></p>
 
                 </div>
             </div>

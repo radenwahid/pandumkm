@@ -5,6 +5,10 @@
 <?php
 $conn = mysqli_connect("localhost", "root", "", "pandumkm");
 
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
 
 function query($query)
 {
@@ -56,6 +60,7 @@ function login($data)
         exit;
     }
 }
+
 
 
 
@@ -111,6 +116,15 @@ function registrasi($data)
         echo "Error: " . mysqli_error($conn);
         return false;
     }
+}
+function isEmailRegistered($email)
+{
+    global $conn;
+    $stmt = $conn->prepare("SELECT * FROM user WHERE email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    return $result->num_rows > 0;
 }
 
 function upload()
