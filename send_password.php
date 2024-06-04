@@ -1,12 +1,9 @@
 <?php
-<<<<<<< HEAD
 require __DIR__ . "/vendor/autoload.php"; // Load PHPMailer autoloader
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-=======
->>>>>>> 2492259b335b7a4dd798123524eba3a8eef0094a
 $mysqli = require __DIR__ . "/database.php";
 
 if (isset($_POST["email"])) {
@@ -25,7 +22,6 @@ if (isset($_POST["email"])) {
         $stmt->execute();
 
         if ($stmt->affected_rows > 0) {
-<<<<<<< HEAD
             $mail = new PHPMailer(true); // Create a new PHPMailer instance
 
             try {
@@ -51,25 +47,6 @@ if (isset($_POST["email"])) {
                 echo 'Message sent, please check your <a href="https://mail.google.com/">email</a>.';
             } catch (Exception $e) {
                 echo "Message could not be sent. Mailer error: {$mail->ErrorInfo}";
-=======
-            $mail = require __DIR__ . "/mailer.php";
-            if ($mail instanceof PHPMailer\PHPMailer\PHPMailer) { // Ensure the returned value is an instance of PHPMailer
-                $mail->setFrom("noreply@example.com");
-                $mail->addAddress($email);
-                $mail->Subject = "Password Reset";
-                $mail->Body = <<<END
-Click <a href="http://example.com/resetpassword.php?token=$token">here</a>
-to reset your password.
-END;
-                try {
-                    $mail->send();
-                    echo "Message sent, please check your inbox.";
-                } catch (Exception $e) {
-                    echo "Message could not be sent. Mailer error: {$mail->ErrorInfo}";
-                }
-            } else {
-                echo "Mailer setup failed.";
->>>>>>> 2492259b335b7a4dd798123524eba3a8eef0094a
             }
         } else {
             http_response_code(400);
