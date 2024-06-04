@@ -45,7 +45,7 @@ if (isset($_POST["login"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>New Password</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="main.js" defer type="module"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"></script>
@@ -66,12 +66,12 @@ if (isset($_POST["login"])) {
     <section class="flex items-center justify-center min-h-screen bg-white rounded-sm dark:bg-gray-800">
 
         <div class="flex max-w-5xl p-5 bg-white shadow-lg rounded-xl dark:bg-gray-800">
-            <div class="hidden w-1/2 sm:block">
-                <img class="hidden rounded-2xl md:block" src="img/assets/3.png" alt="">
+            <div class="hidden w-1/2 mt-10 sm:block">
+                <img class="hidden rounded-2xl md:block" src="3.png" alt="">
             </div>
             <div class="px-16 md:w-1/2 lg:mt-10">
-                <img class="justify-center w-64 md:hidden" src="img/assets/7.png">
-                <h2 class="text-2xl font-bold text-center dark:text-white">Login</h2>
+                <img class="justify-center w-64 md:hidden" src="7.png">
+                <h2 class="text-2xl font-bold text-center xl:mt-28 dark:text-white">Create New Password</h2>
                 <p class="mt-4 text-sm"></p>
 
                 <?php if (isset($eror)) : ?>
@@ -93,46 +93,15 @@ if (isset($_POST["login"])) {
                 <?php endif; ?>
 
                 <form class="flex flex-col gap-4 " action="" method="post">
-                    <input class="p-2 mt-8 border rounded-lg dark:bg-gray-600 dark:text-white dark:focus:ring-blue-600" type="email" name="email" placeholder="Email" id="email">
-                    <div> <input class="w-full p-2 border rounded-lg dark:bg-gray-600 dark:text-white focus:ring-blue-600" type="password" name="password" placeholder="Password" id="password"></div>
-                    <div class="flex items-start mb-2">
-                        <div class="flex items-center h-5">
-                            <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-600 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-400 dark:focus:ring-offset-gray-400" required />
-                        </div>
-                        <label for="remember" class="text-sm font-medium text-gray-900 ms-2 dark:text-white ">Remember me</label>
-                    </div>
-                    <button class="py-2 text-white duration-300 bg-blue-700 rounded-xl hover:bg-blue-600 hover:scale-105 " type="submit" name="login">Login</button>
+                    <input class="p-2 mt-8 border rounded-lg dark:bg-gray-600 dark:text-white dark:focus:ring-blue-600" type="email" name="newpassword" placeholder="Create new password" id="newpass1">
+                    <input class="p-2 mt-2 border rounded-lg dark:bg-gray-600 dark:text-white dark:focus:ring-blue-600" type="email" name="newpassword2" placeholder="Confirm new password" id="newpass2">
+                    <button class="py-2 text-white duration-300 bg-blue-700 rounded-xl hover:bg-blue-600 hover:scale-105 " type="submit" name="login">lanjutkan</button>
                 </form>
-<<<<<<< HEAD
 
-=======
-                <div class="grid items-center grid-cols-3 mt-5 text-gray-400">
-                    <hr class="border-gray-400">
-                    <p class="text-center">OR</p>
-                    <hr class="border-gray-400">
-                </div>
-                <button id="loginwithgoogle" class="flex items-center justify-center w-full py-2 mt-5 text-sm duration-300 bg-white border rounded-xl hover:scale-105">
-                    <svg class="mr-3" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 48 48">
-                        <path fill="#fbc02d" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12	s5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24s8.955,20,20,20	s20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"></path>
-                        <path fill="#e53935" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039	l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"></path>
-                        <path fill="#4caf50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36	c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"></path>
-                        <path fill="#1565c0" d="M43.611,20.083L43.595,20L42,20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571	c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"></path>
-                    </svg>Login With Google</button>
->>>>>>> 2492259b335b7a4dd798123524eba3a8eef0094a
-                <a href="reset.php">
-                    <p class="py-6 mt-1 text-xs border-b border-gray-400 dark:text-white">Lupa password ?</p>
-                </a>
-                <div class="flex items-center justify-between mt-3 text-xs">
-                    <p class="dark:text-white">jika tidak punya akun?<a href="daftar.php" class="ml-2 dark:text-white">daftar</a></p>
-
-                </div>
             </div>
 
         </div>
     </section>
-<<<<<<< HEAD
-    <?php include "components/footer.php"; ?>
-=======
     <footer class="bg-white shadow dark:bg-gray-800 dark:text-white">
         <div class="w-full max-w-screen-xl p-4 mx-auto md:py-8">
             <div class="sm:flex sm:items-center sm:justify-between">
@@ -159,7 +128,6 @@ if (isset($_POST["login"])) {
             <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="" class="hover:underline">PandUMKM</a>. All Rights Reserved.</span>
         </div>
     </footer>
->>>>>>> 2492259b335b7a4dd798123524eba3a8eef0094a
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 
 </body>

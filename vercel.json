@@ -3,5 +3,13 @@
       "api/*.php": {
         "runtime": "vercel-php@0.7.1"
       }
+<<<<<<< HEAD
     }
   }
+=======
+    },
+    "routes": [
+      { "src": "/(.*)",  "dest": "/api/index.php" }
+    ]
+  }
+>>>>>>> 2492259b335b7a4dd798123524eba3a8eef0094a
