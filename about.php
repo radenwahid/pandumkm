@@ -1,10 +1,4 @@
 <?php
-session_start();
-
-if (!isset($_SESSION["login"])) {
-    header("Location: index.php");
-    exit;
-}
 require 'function.php';
 ?>
 <!DOCTYPE html>
@@ -23,7 +17,7 @@ require 'function.php';
     <nav class="sticky top-0 z-30 bg-white border-gray-200 shadow-sm dark:bg-gray-900">
         <div class="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
             <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
-                <img src="logo.png" class="h-8" alt="Flowbite Logo" />
+                <img src="img/assets/logo.png" class="h-8" alt="Flowbite Logo" />
                 <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">PandUMKM</span>
             </a>
             <div class="flex items-center space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
@@ -84,7 +78,7 @@ require 'function.php';
             <div class="flex flex-wrap ">
                 <div class="w-full px-4 mb-10 lg:w-1/2 lg:mb-0">
                     <div class="relative lg:max-w-md">
-                        <img src="logo.png" alt="aboutimage" class="relative z-10 object-cover w-full rounded h-96">
+                        <img src="img/assets/logo.png" alt="aboutimage" class="relative z-10 object-cover w-full rounded h-96">
                         <div class="absolute bottom-0 right-0 z-10 p-8 bg-white border-4 border-blue-500 rounded shadow dark:border-blue-400 lg:-mb-8 lg:-mr-11 sm:p-8 dark:text-gray-300 dark:bg-gray-800 ">
                             <p class="text-lg font-semibold md:w-72">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="absolute top-0 left-0 w-16 h-16 text-blue-700 dark:text-gray-300 opacity-10" viewBox="0 0 16 16">
@@ -119,32 +113,7 @@ require 'function.php';
             </div>
         </div>
     </section>
-    <footer class="bg-white shadow dark:bg-gray-800">
-        <div class="w-full max-w-screen-xl p-4 mx-auto md:py-8">
-            <div class="sm:flex sm:items-center sm:justify-between">
-                <a href="https://flowbite.com/" class="flex items-center mb-4 space-x-3 sm:mb-0 rtl:space-x-reverse">
-                    <img src="logo.png" class="h-8" alt="Flowbite Logo" />
-                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">PandUMKM</span>
-                </a>
-                <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
-                    <li>
-                        <a href="#" class="hover:underline me-4 md:me-6">About</a>
-                    </li>
-                    <li>
-                        <a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a>
-                    </li>
-                    <li>
-                        <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
-                    </li>
-                    <li>
-                        <a href="#" class="hover:underline">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-            <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="" class="hover:underline">PandUMKM</a>. All Rights Reserved.</span>
-        </div>
-    </footer>
+    <?php include "components/footer.php"; ?>
     <script>
         const HSThemeAppearance = {
             init() {

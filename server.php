@@ -1,5 +1,5 @@
 <?php
-$koneksi = mysqli_connect("localhost", "root", "", "pandumkm") or die("Database Error");
+$koneksi = mysqli_connect("localhost", "root", "", "pandumkm1") or die("Database Error");
 
 if (isset($_POST['isi_pesan'])) {
     $pesan = mysqli_real_escape_string($koneksi, $_POST['isi_pesan']);
@@ -32,7 +32,7 @@ if (isset($_POST['isi_pesan'])) {
         } else {
             // Jika Levenshtein distance tidak digunakan, langsung cocokkan pertanyaan
             similar_text(strtolower($pesan), strtolower($pertanyaan_db), $percent);
-            if ($percent > 70) { // Treshold similarity 70%
+            if ($percent > 50) { // Treshold similarity 70%
                 $closest_question = $pertanyaan_db;
                 $closest_answer = $jawaban;
                 break; // Keluar dari loop setelah pertanyaan ditemukan

@@ -3,7 +3,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 
 <?php
-$conn = mysqli_connect("localhost", "root", "", "pandumkm");
+$conn = mysqli_connect("localhost", "root", "", "pandumkm1");
+
+
 
 
 function query($query)
@@ -15,6 +17,11 @@ function query($query)
         $rows[] = $row;
     }
     return $rows;
+}
+
+// Cek koneksi
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
 
 function login($data)
@@ -33,9 +40,13 @@ function login($data)
             // Verifikasi password
             if (password_verify($password, $user['password'])) {
                 // Atur session
+                session_start();
                 $_SESSION['login'] = true;
                 $_SESSION['nama'] = $user['nama'];
                 $_SESSION['email'] = $user['email'];
+                $_SESSION['nama_umkm'] = $user['nama_umkm'];
+                $_SESSION['id'] = $user['id'];
+                $_SESSION['foto'] = $user['foto'];
 
                 // Redirect ke halaman home setelah login berhasil
                 header('Location: chat.php');
@@ -56,6 +67,7 @@ function login($data)
         exit;
     }
 }
+
 
 
 
@@ -111,6 +123,15 @@ function registrasi($data)
         echo "Error: " . mysqli_error($conn);
         return false;
     }
+}
+function isEmailRegistered($email)
+{
+    global $conn;
+    $stmt = $conn->prepare("SELECT * FROM user WHERE email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    return $result->num_rows > 0;
 }
 
 function upload()

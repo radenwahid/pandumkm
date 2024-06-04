@@ -22,6 +22,7 @@ if (!isset($_SESSION['welcome_message_shown'])) {
   $_SESSION['welcome_message_shown'] = true;
 }
 
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (isset($_POST["pesan"])) {
     $pesan = $_POST["pesan"];
@@ -60,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <nav class="sticky top-0 z-30 bg-white border-gray-200 shadow-sm dark:bg-gray-900 dark:backdrop-blur-3xl">
       <div class="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
         <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src="logo.png" class="h-8" alt="Flowbite Logo" />
+          <img src="img/assets/logo.png" class="h-8" alt="Flowbite Logo" />
           <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">PandUMKM</span>
         </a>
         <div class="flex items-center space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
@@ -92,7 +93,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               <li>
 
                 <button hx-post="/hapus-semua-pesan" hx-swap="outerHTML" hx-trigger="click" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white" id="hapusSemuaPesan">Hapus semua pesan</button>
-                <a href="logout.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
+                <button class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white" id="logoutButton">Sign out</button>
               </li>
             </ul>
           </div>
@@ -135,7 +136,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="flex-col flex-shrink-0 hidden w-64 py-8 pl-6 pr-2 bg-white md:block dark:bg-gray-800 dark:text-white " id="navbar-user">
           <div class="flex flex-row items-center justify-center w-full h-12 ">
             <div class="flex items-center justify-center w-10 h-10 text-indigo-700 bg-white rounded-2xl dark:bg-gray-800">
-              <img class="w-6 " src="logo.png" alt="">
+              <img class="w-6 " src="img/assets/logo.png" alt="">
             </div>
             <div class="ml-2 text-2xl font-bold">PandUMKM</div>
           </div>
@@ -461,7 +462,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         })
       })
 
+      function showLogoutAlert() {
+        // Tampilkan SweetAlert
+        Swal.fire({
+          title: "Anda yakin ingin logout?",
+          text: "Anda akan keluar dari sesi ini.",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Ya, Logout",
+          cancelButtonText: "Batal",
+        }).then((result) => {
+          // Jika pengguna mengonfirmasi logout, arahkan ke proses logout
+          if (result.isConfirmed) {
+            window.location.href = "logout_proses.php"; // Ganti dengan URL logout_process.php yang sesuai
+          } else {
+            // Jika pengguna membatalkan logout, kembali ke halaman chat.php
+            window.location.href = "chat.php"; // Ganti dengan URL chat.php yang sesuai
+          }
+        });
+      }
 
+      // Attach the showLogoutAlert function to the button click event
+      document.getElementById('logoutButton').addEventListener('click', showLogoutAlert);
 
 
 
