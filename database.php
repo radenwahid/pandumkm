@@ -2,7 +2,7 @@
 $host = "localhost";
 $user = "root";
 $password = "";
-$dbname = "pandumkm";
+$dbname = "pandumkm1";
 
 $mysqli = new mysqli($host, $user, $password, $dbname);
 
