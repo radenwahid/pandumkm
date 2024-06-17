@@ -22,38 +22,36 @@
                             <svg class="flex-shrink-0 w-5 h-5 mr-2 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path>
                             </svg>
-                            What do you mean by "Figma assets"?
+                            Apa itu PANDUKM?
                         </h3>
-                        <p class="text-gray-500 dark:text-gray-400">You will have access to download the full Figma project including all of the pages, the components, responsive pages, and also the icons, illustrations, and images included in the screens.</p>
+                        <p class="text-gray-500 dark:text-gray-400">PandUMKM adalah aplikasi chatbot berbasis web yang dirancang untuk membantu pengguna mengakses informasi dan panduan seputar UMKM tanpa perlu mengunduh aplikasi. Chatbot ini dapat menjawab pertanyaan Anda secara langsung dan tersedia 24 jam setiap hari</p>
                     </div>
                     <div class="mb-10">
                         <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
                             <svg class="flex-shrink-0 w-5 h-5 mr-2 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path>
                             </svg>
-                            What does "lifetime access" exactly mean?
+                            Bagaimana cara mendaftar di PandUMKM?
                         </h3>
-                        <p class="text-gray-500 dark:text-gray-400">Once you have purchased either the design, code, or both packages, you will have access to all of the future updates based on the roadmap, free of charge.</p>
+                        <p class="text-gray-500 dark:text-gray-400">Untuk mendaftar, klik tombol "Register" di halaman utama, kemudian masukkan Nama, Nama UMKM, Email, dan Password Anda. Pastikan untuk memasukkan password yang sama di kedua kolom password untuk memastikan konsistensi.</p>
                     </div>
                     <div class="mb-10">
                         <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
                             <svg class="flex-shrink-0 w-5 h-5 mr-2 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path>
                             </svg>
-                            How does support work?
+                            Bagaimana cara login ke PandUMKM?
                         </h3>
-                        <p class="text-gray-500 dark:text-gray-400">We're aware of the importance of well qualified support, that is why we decided that support will only be provided by the authors that actually worked on this project.</p>
-                        <p class="text-gray-500 dark:text-gray-400">Feel free to <a href="#" class="font-medium underline text-primary-600 dark:text-primary-500 hover:no-underline" target="_blank" rel="noreferrer">contact us</a> and we'll help you out as soon as we can.</p>
+                        <p class="text-gray-500 dark:text-gray-400">Klik tombol "Login" di halaman utama, lalu masukkan Email dan Password yang telah Anda daftarkan. Jika berhasil, Anda akan diarahkan ke halaman utama aplikasi.</p>
                     </div>
                     <div class="mb-10">
                         <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
                             <svg class="flex-shrink-0 w-5 h-5 mr-2 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path>
                             </svg>
-                            I want to build more than one project. Is that allowed?
+                            Apa yang bisa saya tanyakan kepada chatbot PandUMKM?
                         </h3>
-                        <p class="text-gray-500 dark:text-gray-400">You can use Windster for an unlimited amount of projects, whether it's a personal website, a SaaS app, or a website for a client. As long as you don't build a product that will directly compete with Windster either as a UI kit, theme, or template, it's fine.</p>
-                        <p class="text-gray-500 dark:text-gray-400">Find out more information by <a href="#" class="font-medium underline text-primary-600 dark:text-primary-500 hover:no-underline">reading the license</a>.</p>
+                        <p class="text-gray-500 dark:text-gray-400">Anda bisa menanyakan berbagai pertanyaan seputar UMKM, khususnya terkait marketing, tips bisnis, strategi digital, dan lainnya. Chatbot akan memberikan jawaban secara langsung berdasarkan informasi yang tersedia.</p>
                     </div>
                 </div>
                 <div>
@@ -62,40 +60,36 @@
                             <svg class="flex-shrink-0 w-5 h-5 mr-2 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path>
                             </svg>
-                            What does "free updates" include?
+                            Apakah saya bisa mengakses PandUMKM kapan saja?
                         </h3>
-                        <p class="text-gray-500 dark:text-gray-400">The free updates that will be provided is based on the <a href="#" class="font-medium underline text-primary-600 dark:text-primary-500 hover:no-underline">roadmap</a> that we have laid out for this project. It is also possible that we will provide extra updates outside of the roadmap as well.</p>
+                        <p class="text-gray-500 dark:text-gray-400">Ya, PandUMKM tersedia 24 jam setiap hari, sehingga Anda bisa mengaksesnya kapan saja sesuai kebutuhan Anda.</p>
                     </div>
                     <div class="mb-10">
                         <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
                             <svg class="flex-shrink-0 w-5 h-5 mr-2 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path>
                             </svg>
-                            What does the free version include?
+                            Di mana saya bisa menemukan panduan dan tips menggunakan PandUMKM?
                         </h3>
-                        <p class="text-gray-500 dark:text-gray-400">The <a href="#" class="font-medium underline text-primary-600 dark:text-primary-500 hover:no-underline">free version</a> of Windster includes a minimal style guidelines, component variants, and a dashboard page with the mobile version alongside it.</p>
-                        <p class="text-gray-500 dark:text-gray-400">You can use this version for any purposes, because it is open-source under the MIT license.</p>
+                        <p class="text-gray-500 dark:text-gray-400">Anda bisa menemukan panduan dan tips menggunakan PandUMKM dengan mengklik tombol "Artikel" di halaman utama. Di sana, Anda akan menemukan berbagai artikel yang bermanfaat.</p>
                     </div>
                     <div class="mb-10">
                         <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
                             <svg class="flex-shrink-0 w-5 h-5 mr-2 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path>
                             </svg>
-                            What is the difference between Windster and Tailwind UI?
+                            Apakah PandUMKM gratis digunakan?
                         </h3>
-                        <p class="text-gray-500 dark:text-gray-400">Although both Windster and Tailwind UI are built for integration with Tailwind CSS, the main difference is in the design, the pages, the extra components and UI elements that Windster includes.</p>
-                        <p class="text-gray-500 dark:text-gray-400">Additionally, Windster is a project that is still in development, and later it will include both the application, marketing, and e-commerce UI interfaces.</p>
+                        <p class="text-gray-500 dark:text-gray-400">Ya, PandUMKM adalah aplikasi gratis yang bisa digunakan oleh siapa saja untuk mendapatkan informasi dan bantuan seputar UMKM.</p>
                     </div>
                     <div class="mb-10">
                         <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
                             <svg class="flex-shrink-0 w-5 h-5 mr-2 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path>
                             </svg>
-                            Can I use Windster in open-source projects?
+                            Apakah data pribadi saya aman di PandUMKM?
                         </h3>
-                        <p class="text-gray-500 dark:text-gray-400">Generally, it is accepted to use Windster in open-source projects, as long as it is not a UI library, a theme, a template, a page-builder that would be considered as an alternative to Windster itself.</p>
-                        <p class="text-gray-500 dark:text-gray-400">With that being said, feel free to use this design kit for your open-source projects.</p>
-                        <p class="text-gray-500 dark:text-gray-400">Find out more information by <a href="#" class="font-medium underline text-primary-600 dark:text-primary-500 hover:no-underline">reading the license</a>.</p>
+                        <p class="text-gray-500 dark:text-gray-400">PandUMKM berkomitmen untuk menjaga privasi dan keamanan data pribadi Anda. Informasi yang Anda berikan hanya akan digunakan untuk keperluan aplikasi dan tidak akan dibagikan kepada pihak ketiga tanpa izin Anda.</p>
                     </div>
                 </div>
             </div>

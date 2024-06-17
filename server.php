@@ -32,7 +32,7 @@ if (isset($_POST['isi_pesan'])) {
         } else {
             // Jika Levenshtein distance tidak digunakan, langsung cocokkan pertanyaan
             similar_text(strtolower($pesan), strtolower($pertanyaan_db), $percent);
-            if ($percent > 50) { // Treshold similarity 70%
+            if ($percent > 85) { // Treshold similarity 70%
                 $closest_question = $pertanyaan_db;
                 $closest_answer = $jawaban;
                 break; // Keluar dari loop setelah pertanyaan ditemukan
@@ -41,7 +41,7 @@ if (isset($_POST['isi_pesan'])) {
     }
 
     // Menetapkan batas jarak maksimum yang diperbolehkan untuk mempertimbangkan pertanyaan sebagai 'mendekati'
-    $threshold = 1; // Nilai ambang batas yang bisa disesuaikan
+    $threshold = 20; // Nilai ambang batas yang bisa disesuaikan
 
     if ($min_distance <= $threshold && $use_levenshtein) {
         // Jika pertanyaan yang mendekati ditemukan dengan menggunakan Levenshtein distance, kembalikan jawaban

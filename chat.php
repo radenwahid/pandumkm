@@ -8,18 +8,12 @@ if (!isset($_SESSION["login"])) {
   exit;
 }
 require 'function.php';
-if (!isset($_SESSION['welcome_message_shown'])) {
-  // Ambil nama pengguna dari session
-  $nama = $_SESSION["nama"];
-
-  // Pesan selamat datang
-  $welcome_message = "Selamat datang, $nama!";
-
-  // Tampilkan alert dengan JavaScript
-  echo "<script>alert('$welcome_message');</script>";
-
-  // Set session bahwa pesan sudah ditampilkan
-  $_SESSION['welcome_message_shown'] = true;
+// Tampilkan alert hanya saat pertama kali login
+if (!isset($_SESSION["alert_shown"])) {
+  $_SESSION["alert_shown"] = true;
+  $showAlert = true; // Variabel untuk menentukan apakah alert perlu ditampilkan di halaman HTML
+} else {
+  $showAlert = false;
 }
 
 
@@ -53,8 +47,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <link href="dist/output.css" rel="stylesheet">
 </head>
 
-<body class="transition-colors duration-1000">
+<body id="transition-colors duration-1000">
+  <div id="loadingIndicator" class="fixed top-0 bottom-0 left-0 right-0 flex items-center justify-center hidden bg-white bg-opacity-75 dark:bg-gray-800 dark:bg-opacity-75">
+    <svg aria-hidden="true" class="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor" />
+      <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill" />
+    </svg>
+    <span class="sr-only">Loading...</span>
+  </div>
   <main class="transition-colors duration-1000">
+
 
     <!-- nav -->
     <nav class="sticky top-0 z-30 bg-white border-gray-200 shadow-sm dark:bg-gray-900 dark:backdrop-blur-3xl">
@@ -123,13 +125,44 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </nav>
     <!-- component -->
 
+    <!-- Alert -->
+    <div id="welcomeAlert" class="fixed inset-0 z-50 flex items-center justify-center <?php echo $showAlert ? '' : 'hidden'; ?> bg-gray-900 bg-opacity-50">
+      <div class="space-y-5">
+        <div class="p-4 border-t-2 border-teal-500 rounded-lg bg-teal-50 dark:bg-teal-800/30" role="alert">
+          <div class="flex">
+            <div class="flex-shrink-0">
+              <!-- Icon -->
+              <span class="inline-flex items-center justify-center text-teal-800 bg-teal-200 border-4 border-teal-100 rounded-full size-8 dark:border-teal-900 dark:bg-teal-800 dark:text-teal-400">
+                <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path>
+                  <path d="m9 12 2 2 4-4"></path>
+                </svg>
+              </span>
+              <!-- End Icon -->
+            </div>
+            <div class="ms-3">
+              <h3 class="font-semibold text-gray-800 dark:text-white">
+                Welcome <?php echo $_SESSION['nama']; ?>
+              </h3>
+              <p class="text-sm text-gray-700 dark:text-neutral-400">
+                You have successfully logged in.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- End Alert -->
+
     <div class="flex h-screen antialiased text-gray-800 dark:bg-gray-800">
-      <button data-collapse-toggle="navbar-user" type="button" class="inline-flex items-center justify-center w-10 h-10 p-2 ml-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-800" aria-controls="navbar-user" aria-expanded="false">
+
+      <!-- <button data-collapse-toggle="navbar-user" type="button" class="inline-flex items-center justify-center w-10 h-10 p-2 ml-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-800 " aria-controls="navbar-user" aria-expanded="false">
         <span class="sr-only">Open main menu</span>
         <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
         </svg>
-      </button>
+      </button> -->
       <div class="flex flex-row w-full h-full overflow-x-hidden dark:bg-gray-800 ">
         <!-- userbar -->
         <div class="flex-col flex-shrink-0 hidden w-64 py-8 pl-6 pr-2 bg-white md:block dark:bg-gray-800 dark:text-white " id="navbar-user">
@@ -268,6 +301,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
     </div>
     <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Periksa apakah alert perlu ditampilkan pada halaman pertama kali load
+        var showAlert = document.getElementById('welcomeAlert').classList.contains('hidden');
+
+        // Jika showAlert true, tampilkan alert
+        if (!showAlert) {
+          document.getElementById('welcomeAlert').classList.remove('hidden');
+
+          // Sembunyikan alert setelah 3 detik
+          setTimeout(function() {
+            document.getElementById('welcomeAlert').classList.add('hidden');
+          }, 3000); // 3000 milidetik = 3 detik
+        }
+      });
+
       // Mendapatkan elemen waktu
 
       $(document).ready(function() {
@@ -348,27 +396,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       });
 
       function sendMessage(pesan) {
-        $.ajax({
-          url: 'server.php',
-          type: 'POST',
-          data: {
-            isi_pesan: pesan
-          },
-          success: function(result) {
+        // Create the loading indicator element
+        var loadingIndicator = '<div id="loading" class="col-start-1 col-end-8 p-3 rounded-lg"><div class="flex flex-row items-center"><div class="relative flex items-center justify-center flex-shrink-0 w-10 h-10 bg-indigo-500 rounded-full"><svg aria-hidden="true" class="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/><path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/></svg><span class="sr-only">Loading...</span></div><div class="relative px-4 py-2 ml-3 text-sm bg-gray-300 shadow rounded-xl dark:bg-gray-700 dark:text-white "><p>Loading...</p></div></div></div>';
 
-            var msg = '<div class="col-start-1 col-end-8 p-3 rounded-lg"><div class="flex flex-row items-center"><div class="flex items-center justify-center flex-shrink-0 w-10 h-10 bg-indigo-500 rounded-full">Bot</div><div class="relative px-4 py-2 ml-3 text-sm bg-gray-300 shadow rounded-xl dark:bg-gray-700 dark:text-white "><p>' + result + '</p></div></div><p id="timestamp" class="mt-1 ml-16 text-xs text-gray-500 dark:text-gray-400"><span id="time"></span></p></div>';
+        // Append the loading indicator to the chat area
+        $(".grid.grid-cols-12").append(loadingIndicator);
 
-            // Masukkan pesan balasan ke dalam buble chat
-            $(".grid.grid-cols-12").append(msg);
+        // Auto scroll to the bottom
+        scrollToBottom();
 
-            // Auto scroll ke bawah
-            scrollToBottom();
-          },
-          error: function(xhr, status, error) {
-            console.error("AJAX request error:", status, error);
-          }
-        });
+        setTimeout(function() {
+          $.ajax({
+            url: 'server.php',
+            type: 'POST',
+            data: {
+              isi_pesan: pesan
+            },
+            success: function(result) {
+              // Remove the loading indicator
+              $("#loading").remove();
+
+              // Create the message element
+              var msg = '<div class="col-start-1 col-end-8 p-3 rounded-lg"><div class="flex flex-row items-center"><div class="flex items-center justify-center flex-shrink-0 w-10 h-10 bg-indigo-500 rounded-full">Bot</div><div class="relative px-4 py-2 ml-3 text-sm bg-gray-300 shadow rounded-xl dark:bg-gray-700 dark:text-white "><p>' + result + '</p></div></div><p id="timestamp" class="mt-1 ml-16 text-xs text-gray-500 dark:text-gray-400"><span id="time"></span></p></div>';
+
+              // Append the message to the chat area
+              $(".grid.grid-cols-12").append(msg);
+
+              // Auto scroll to the bottom
+              scrollToBottom();
+            },
+            error: function(xhr, status, error) {
+              console.error("AJAX request error:", status, error);
+            }
+          });
+        }, 1000); // Delay the AJAX request by 1 second to show the loading indicator
       }
+
 
       // Fungsi untuk auto scroll ke bawah
       function scrollToBottom() {
@@ -492,6 +555,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
       // ajax
+      document.querySelector("form").addEventListener("kirim", function() {
+        document.getElementById("loadingIndicator").classList.remove("hidden");
+      });
+
+      // JavaScript to show loading indicator on page refresh or navigation
+      window.addEventListener("beforeunload", function() {
+        document.getElementById("loadingIndicator").classList.remove("hidden");
+      });
+
+      // Hide the loading indicator once the page is fully loaded
+      window.addEventListener("load", function() {
+        document.getElementById("loadingIndicator").classList.add("hidden");
+        document.body.classList.remove("loading");
+      });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
   </main>

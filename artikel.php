@@ -16,6 +16,7 @@ require 'function.php';
     <title>Artikel</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@5/dark.css" />
     <link href="dist/output.css" rel="stylesheet">
 </head>
 
@@ -58,7 +59,7 @@ URL: https://flowbite.com/docs/components/typography/
                     <ul class="py-2" aria-labelledby="user-menu-button">
 
                         <li>
-                            <a href="logout.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
+                            <button class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white" id="logoutButton">Sign out</button>
                         </li>
                     </ul>
                 </div>
@@ -97,241 +98,82 @@ URL: https://flowbite.com/docs/components/typography/
 
     <main class="pt-8 pb-16 antialiased bg-white lg:pt-16 lg:pb-24 dark:bg-gray-800">
         <div class="flex justify-between max-w-screen-xl px-4 mx-auto ">
-            <article class="w-full max-w-2xl mx-auto format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
-                <header class="mb-4 lg:mb-6 not-format">
-                    <address class="flex items-center mb-6 not-italic">
-                        <div class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
-                            <img class="w-16 h-16 mr-4 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-2.jpg" alt="Jese Leos">
-                            <div>
-                                <a href="#" rel="author" class="text-xl font-bold text-gray-900 dark:text-white">Jese Leos</a>
-                                <p class="text-base text-gray-500 dark:text-gray-400">Graphic Designer, educator & CEO Flowbite</p>
-                                <p class="text-base text-gray-500 dark:text-gray-400"><time pubdate datetime="2022-02-08" title="February 8th, 2022">Feb. 8, 2022</time></p>
-                            </div>
-                        </div>
-                    </address>
-                    <h1 class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">Best practices for successful prototypes</h1>
-                </header>
-                <p class="text-black lead dark:text-white">Flowbite is an open-source library of UI components built with the utility-first
-                    classes from Tailwind CSS. It also includes interactive elements such as dropdowns, modals,
-                    datepickers.</p>
-                <p class="text-black dark:text-white">Before going digital, you might benefit from scribbling down some ideas in a sketchbook. This way,
-                    you can think things through before committing to an actual design project.</p>
-                <p class="text-black dark:text-white">But then I found a <a href="https://flowbite.com">component library based on Tailwind CSS called
-                        Flowbite</a>. It comes with the most commonly used UI components, such as buttons, navigation
-                    bars, cards, form elements, and more which are conveniently built with the utility classes from
-                    Tailwind CSS.</p>
-                <br>
-                <figure><img src="https://flowbite.s3.amazonaws.com/typography-plugin/typography-image-1.png" alt="">
-                    <br>
-                    <figcaption class="text-black dark:text-white">Digital art by Anonymous</figcaption>
-                </figure>
-                <h2 class="text-black dark:text-white">Getting started with Flowbite</h2>
-                <p class="text-black dark:text-white">First of all you need to understand how Flowbite works. This library is not another framework.
-                    Rather, it is a set of components based on Tailwind CSS that you can just copy-paste from the
-                    documentation.</p>
-                <ol>
-                    <li class="text-black dark:text-white"><strong>Usability testing</strong>. Does your user know how to exit out of screens? Can they
-                        follow your intended user journey and buy something from the site you’ve designed? By running a
-                        usability test, you’ll be able to see how users will interact with your design once it’s live;
-                    </li>
-                    <li class="text-black dark:text-white"><strong>Involving stakeholders</strong>. Need to check if your GDPR consent boxes are displaying
-                        properly? Pass your prototype to your data protection team and they can test it for real;</li>
-                    <li class="text-black dark:text-white"><strong>Impressing a client</strong>. Prototypes can help explain or even sell your idea by
-                        providing your client with a hands-on experience;</li>
-                    <li class="text-black dark:text-white"><strong>Communicating your vision</strong>. By using an interactive medium to preview and test
-                        design elements, designers and developers can understand each other — and the project — better.
-                    </li>
-                </ol>
-                <br>
+            <article class="w-full max-w-4xl p-6 mx-auto bg-white rounded-lg shadow-lg dark:bg-blue-700 dark:border-gray-700">
+                <div class="flex flex-col items-center justify-center mb-6 md:flex-row md:items-center md:justify-between">
+                    <h1 class="text-3xl font-bold text-gray-800 dark:text-white md:mb-0">Panduan Pengguna: Tips & Trik</h1>
+                    <img src="img/assets/umkm.jpeg" alt="Logo" class="object-cover mt-6 rounded-lg md:mt-0 md:ml-6 w-72 md:w-96 aspect-w-1 aspect-h-1">
+                </div>
 
-                <form class="mb-6">
-                    <div class="px-4 py-2 mb-4 bg-white border border-gray-200 rounded-lg rounded-t-lg dark:bg-gray-900 dark:border-gray-700">
-                        <label for="comment" class="sr-only">Your comment</label>
-                        <textarea id="comment" rows="6" class="w-full px-0 text-sm text-gray-900 border-0 focus:ring-0 dark:text-white dark:placeholder-gray-400 dark:bg-gray-900" placeholder="Write a comment..." required></textarea>
-                    </div>
-                    <button type="submit" class="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800">
-                        Post comment
-                    </button>
-                </form>
-                <article class="p-6 mb-6 text-base bg-white rounded-lg dark:bg-gray-900">
-                    <footer class="flex items-center justify-between mb-2">
-                        <div class="flex items-center">
-                            <p class="inline-flex items-center mr-3 text-sm font-semibold text-gray-900 dark:text-white"><img class="w-6 h-6 mr-2 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-2.jpg" alt="Michael Gough">Michael Gough</p>
-                            <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="2022-02-08" title="February 8th, 2022">Feb. 8, 2022</time></p>
-                        </div>
-                        <button id="dropdownComment1Button" data-dropdown-toggle="dropdownComment1" class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-500 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50 dark:text-gray-400 dark:bg-gray-900 dark:hover:bg-gray-700 dark:focus:ring-gray-600" type="button">
-                            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 3">
-                                <path d="M2 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm6.041 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM14 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z" />
-                            </svg>
-                            <span class="sr-only">Comment settings</span>
-                        </button>
-                        <!-- Dropdown menu -->
-                        <div id="dropdownComment1" class="z-10 hidden bg-white divide-y divide-gray-100 rounded shadow w-36 dark:bg-gray-700 dark:divide-gray-600">
-                            <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownMenuIconHorizontalButton">
-                                <li>
-                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Remove</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Report</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </footer>
-                    <p class="text-black dark:text-white">Very straight-to-point article. Really worth time reading. Thank you! But tools are just the
-                        instruments for the UX designers. The knowledge of the design tools are as important as the
-                        creation of the design strategy.</p>
-                    <div class="flex items-center mt-4 space-x-4">
-                        <button type="button" class="flex items-center text-sm font-medium text-gray-500 hover:underline dark:text-gray-400">
-                            <svg class="mr-1.5 w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
-                                <path d="M18 0H2a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h2v4a1 1 0 0 0 1.707.707L10.414 13H18a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-5 4h2a1 1 0 1 1 0 2h-2a1 1 0 1 1 0-2ZM5 4h5a1 1 0 1 1 0 2H5a1 1 0 0 1 0-2Zm2 5H5a1 1 0 0 1 0-2h2a1 1 0 0 1 0 2Zm9 0h-6a1 1 0 0 1 0-2h6a1 1 0 1 1 0 2Z" />
-                            </svg>
-                            Reply
-                        </button>
-                    </div>
-                </article>
-                <article class="p-6 mb-6 ml-6 text-base bg-white rounded-lg lg:ml-12 dark:bg-gray-900">
-                    <footer class="flex items-center justify-between mb-2">
-                        <div class="flex items-center">
-                            <p class="inline-flex items-center mr-3 text-sm font-semibold text-gray-900 dark:text-white"><img class="w-6 h-6 mr-2 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="Jese Leos">Jese Leos</p>
-                            <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="2022-02-12" title="February 12th, 2022">Feb. 12, 2022</time></p>
-                        </div>
-                        <button id="dropdownComment2Button" data-dropdown-toggle="dropdownComment2" class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-500 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50 dark:text-gray-400 dark:bg-gray-900 dark:hover:bg-gray-700 dark:focus:ring-gray-600" type="button">
-                            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 3">
-                                <path d="M2 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm6.041 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM14 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z" />
-                            </svg>
-                            <span class="sr-only">Comment settings</span>
-                        </button>
-                        <!-- Dropdown menu -->
-                        <div id="dropdownComment2" class="z-10 hidden bg-white divide-y divide-gray-100 rounded shadow w-36 dark:bg-gray-700 dark:divide-gray-600">
-                            <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownMenuIconHorizontalButton">
-                                <li>
-                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Remove</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Report</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </footer>
-                    <p class="text-black dark:text-white">Much appreciated! Glad you liked it ☺️</p>
-                    <div class="flex items-center mt-4 space-x-4">
-                        <button type="button" class="flex items-center text-sm font-medium text-gray-500 hover:underline dark:text-gray-400">
-                            <svg class="mr-1.5 w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
-                                <path d="M18 0H2a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h2v4a1 1 0 0 0 1.707.707L10.414 13H18a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-5 4h2a1 1 0 1 1 0 2h-2a1 1 0 1 1 0-2ZM5 4h5a1 1 0 1 1 0 2H5a1 1 0 0 1 0-2Zm2 5H5a1 1 0 0 1 0-2h2a1 1 0 0 1 0 2Zm9 0h-6a1 1 0 0 1 0-2h6a1 1 0 1 1 0 2Z" />
-                            </svg>
-                            Reply
-                        </button>
-                    </div>
-                </article>
 
-                <div id="dropdownComment2" class="z-10 hidden bg-white divide-y divide-gray-100 rounded shadow w-36 dark:bg-gray-700 dark:divide-gray-600">
-                    <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownMenuIconHorizontalButton">
-                        <li>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</a>
+                <div class="flex items-center mb-4 text-gray-800 dark:text-white">
+                    <p class="mr-4">Agustus 80, 2090 |</p>
+                    <p class="mr-4">fatharanisativa@gmail.com |</p>
+                </div>
+                <div class="mt-12">
+                    <!-- <h2 class="text-base font-bold text-gray-800 dark:text-white">Socials</h2> -->
+                    <ul class="flex mt-4 space-x-4 ">
+                        <li class="flex items-center justify-center transition duration-300 ease-in-out delay-150 bg-gray-900 rounded-full w-7 h-7 dark:bg-blue-700 outline outline-offset-0 outline-cyan-white dark:text-white shrink-0 hover:-translate-y-1 hover:scale-110 hover:bg-blue-800">
+                            <a href="https://www.facebook.com/profile.php?id=100004774096922" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" fill='#ffff' viewBox="0 0 24 24">
+                                    <path d="M6.812 13.937H9.33v9.312c0 .414.335.75.75.75l4.007.001a.75.75 0 0 0 .75-.75v-9.312h2.387a.75.75 0 0 0 .744-.657l.498-4a.75.75 0 0 0-.744-.843h-2.885c.113-2.471-.435-3.202 1.172-3.202 1.088-.13 2.804.421 2.804-.75V.909a.75.75 0 0 0-.648-.743A26.926 26.926 0 0 0 15.071 0c-7.01 0-5.567 7.772-5.74 8.437H6.812a.75.75 0 0 0-.75.75v4c0 .414.336.75.75.75zm.75-3.999h2.518a.75.75 0 0 0 .75-.75V6.037c0-2.883 1.545-4.536 4.24-4.536.878 0 1.686.043 2.242.087v2.149c-.402.205-3.976-.884-3.976 2.697v2.755c0 .414.336.75.75.75h2.786l-.312 2.5h-2.474a.75.75 0 0 0-.75.75V22.5h-2.505v-9.312a.75.75 0 0 0-.75-.75H7.562z" data-original="#000000" />
+                                </svg>
+                            </a>
                         </li>
-                        <li>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Remove</a>
+                        <li class="flex items-center justify-center transition duration-300 ease-in-out delay-150 bg-white rounded-full w-7 h-7 outline outline-offset-0 dark:bg-blue-700 dark:text-white hover:-translate-y-1 hover:scale-110 hover:bg-blue-800 shrink-0">
+                            <a href="https://www.instagram.com/fthrnisativa/" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" fill='#fff' viewBox="0 0 24 24">
+                                    <path d="M12 9.3a2.7 2.7 0 1 0 0 5.4 2.7 2.7 0 0 0 0-5.4Zm0-1.8a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Zm5.85-.225a1.125 1.125 0 1 1-2.25 0 1.125 1.125 0 0 1 2.25 0ZM12 4.8c-2.227 0-2.59.006-3.626.052-.706.034-1.18.128-1.618.299a2.59 2.59 0 0 0-.972.633 2.601 2.601 0 0 0-.634.972c-.17.44-.265.913-.298 1.618C4.805 9.367 4.8 9.714 4.8 12c0 2.227.006 2.59.052 3.626.034.705.128 1.18.298 1.617.153.392.333.674.632.972.303.303.585.484.972.633.445.172.918.267 1.62.3.993.047 1.34.052 3.626.052 2.227 0 2.59-.006 3.626-.052.704-.034 1.178-.128 1.617-.298.39-.152.674-.333.972-.632.304-.303.485-.585.634-.972.171-.444.266-.918.299-1.62.047-.993.052-1.34.052-3.626 0-2.227-.006-2.59-.052-3.626-.034-.704-.128-1.18-.299-1.618a2.619 2.619 0 0 0-.633-.972 2.595 2.595 0 0 0-.972-.634c-.44-.17-.914-.265-1.618-.298-.993-.047-1.34-.052-3.626-.052ZM12 3c2.445 0 2.75.009 3.71.054.958.045 1.61.195 2.185.419A4.388 4.388 0 0 1 19.49 4.51c.457.45.812.994 1.038 1.595.222.573.373 1.227.418 2.185.042.96.054 1.265.054 3.71 0 2.445-.009 2.75-.054 3.71-.045.958-.196 1.61-.419 2.185a4.395 4.395 0 0 1-1.037 1.595 4.44 4.44 0 0 1-1.595 1.038c-.573.222-1.227.373-2.185.418-.96.042-1.265.054-3.71.054-2.445 0-2.75-.009-3.71-.054-.958-.045-1.61-.196-2.185-.419A4.402 4.402 0 0 1 4.51 19.49a4.414 4.414 0 0 1-1.037-1.595c-.224-.573-.374-1.227-.419-2.185C3.012 14.75 3 14.445 3 12c0-2.445.009-2.75.054-3.71s.195-1.61.419-2.185A4.392 4.392 0 0 1 4.51 4.51c.45-.458.994-.812 1.595-1.037.574-.224 1.226-.374 2.185-.419C9.25 3.012 9.555 3 12 3Z">
+                                    </path>
+                                </svg>
+                            </a>
                         </li>
-                        <li>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Report</a>
+                        <li class="flex items-center justify-center transition duration-300 ease-in-out delay-150 bg-blue-500 rounded-full w-7 h-7 outline outline-offset-0 dark:bg-blue-700 dark:text-white hover:-translate-y-1 hover:scale-110 hover:bg-blue-800 shrink-0">
+                            <a href="https://wa.me/6285886468745?text=Halo%20saya%20ingin%20bertanya%20terkait%20PandUMKM.com" target="_blank">
+                                <svg width="16px" height="16px" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg" fill='#fff'>
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                                </svg>
+                            </a>
                         </li>
                     </ul>
                 </div>
-                </section>
             </article>
+
+
         </div>
+        <article class="w-full max-w-5xl p-6 mx-auto mt-10 text-center">
+            <p class="text-3xl font-semibold text-gray-500 dark:text-white">Halo, selamat datang di Website PandUMKM! 👍😉</p>
+            <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
+            <p class="mt-12 text-5xl font-semibold text-gray-500 dark:text-white">Login</p>
+            <p class="mt-4 text-xl font-light text-justify text-dark dark:text-white">Langkah pertama, login jika Anda sudah memiliki akun dengan memasukkan Email dan Password. Jika berhasil, tampilan akan seperti di bawah ini</p>
+            <p class="mt-12 text-5xl font-semibold text-gray-500 dark:text-white">Registrasi</p>
+            <p class="mt-4 text-xl font-light text-justify text-dark dark:text-white">Langkah kedua, jika Anda belum memiliki akun, daftar terlebih dahulu dengan memasukkan Nama, Nama UMKM, Email, Password 1, dan Password 2 (pastikan kedua password sama). Jika berhasil, tampilan akan seperti di bawah ini.</p>
+            <p class="mt-12 text-5xl font-semibold text-gray-500 dark:text-white">Halaman Chatbot</p>
+            <p class="mt-4 text-xl font-light text-justify text-dark dark:text-white">Langkah ketiga, Anda bisa langsung menanyakan pertanyaan seputar UMKM, khususnya marketing :</p>
+            <ol class="ml-12 list-decimal">
+                <li class="mt-4 text-xl font-light text-justify text-dark dark:text-white">Anda akan disambut oleh chatbot seperti tampilan di bawah ini.</li>
+                <li class="mt-4 text-xl font-light text-justify text-dark dark:text-white">Ketik “hai/hello”, maka chatbot akan menjawab seperti tampilan di bawah ini.</li>
+                <li class="mt-4 text-xl font-light text-justify text-dark dark:text-white">Tanyakan pertanyaan UMKM, contohnya: “Kelebihan menggunakan digital marketing”, maka chatbot akan menjawab seperti tampilan di bawah ini.</li>
+                <!-- ... -->
+            </ol>
+            <p class="mt-12 text-5xl font-semibold text-gray-500 dark:text-white">Artikel</p>
+            <p class="mt-4 text-xl font-light text-justify text-dark dark:text-white">Langkah keempat, buka halaman artikel dengan mengklik tombol artikel untuk melihat panduan dan tips trik menggunakan aplikasi PandUMKM. Tampilan artikel akan seperti di bawah ini.</p>
+            <p class="mt-12 text-5xl font-semibold text-gray-500 dark:text-white">About</p>
+            <p class="mt-4 text-xl font-light text-justify text-dark dark:text-white">About
+                Langkah kelima, buka halaman About dengan mengklik tombol About untuk melihat informasi tentang PandUMKM, tim pengembang, dan kontak yang bisa dihubungi untuk tindak lanjut aplikasi PandUMKM. Tampilan halaman About akan seperti di bawah ini.
+            </p>
+            <p class="mt-12 text-5xl font-semibold text-gray-500 dark:text-white">FAQ</p>
+            <p class="mt-4 text-xl font-light text-justify text-dark dark:text-white">Langkah keenam, buka halaman FAQ dengan mengklik tombol FAQ. Tampilan halaman FAQ akan seperti di bawah ini.</p>
+            <p class="mt-12 text-5xl font-semibold text-gray-500 dark:text-white">Logout</p>
+            <p class="mt-4 text-xl font-light text-justify text-dark dark:text-white">Langkah ketujuh, keluar dari aplikasi dengan membuka logo foto Anda di atas, lalu klik tombol Logout.</p>
+
+        </article>
     </main>
 
-    <aside aria-label="Related articles" class="py-8 lg:py-24 bg-gray-50 dark:bg-gray-800 ">
-        <div class="max-w-screen-xl px-4 mx-auto">
-            <h2 class="mb-8 text-2xl font-bold text-gray-900 dark:text-white">Related articles</h2>
-            <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
-                <article class="max-w-xs ">
-                    <a href="#">
-                        <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-1.png" class="mb-5 rounded-lg" alt="Image 1">
-                    </a>
-                    <h2 class="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
-                        <a href="#">Our first office</a>
-                    </h2>
-                    <p class="mb-4 text-gray-500 dark:text-gray-400">Over the past year, Volosoft has undergone many changes! After months of preparation.</p>
-                    <a href="#" class="inline-flex items-center font-medium text-black underline dark:text-white underline-offset-4 hover:no-underline">
-                        Read in 2 minutes
-                    </a>
-                </article>
-                <article class="max-w-xs">
-                    <a href="#">
-                        <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-2.png" class="mb-5 rounded-lg" alt="Image 2">
-                    </a>
-                    <h2 class="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
-                        <a href="#">Enterprise design tips</a>
-                    </h2>
-                    <p class="mb-4 text-gray-500 dark:text-gray-400">Over the past year, Volosoft has undergone many changes! After months of preparation.</p>
-                    <a href="#" class="inline-flex items-center font-medium text-black underline dark:text-white underline-offset-4 hover:no-underline">
-                        Read in 12 minutes
-                    </a>
-                </article>
-                <article class="max-w-xs">
-                    <a href="#">
-                        <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-3.png" class="mb-5 rounded-lg" alt="Image 3">
-                    </a>
-                    <h2 class="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
-                        <a href="#">We partnered with Google</a>
-                    </h2>
-                    <p class="mb-4 text-gray-500 dark:text-gray-400">Over the past year, Volosoft has undergone many changes! After months of preparation.</p>
-                    <a href="#" class="inline-flex items-center font-medium text-black underline dark:text-white underline-offset-4 hover:no-underline">
-                        Read in 8 minutes
-                    </a>
-                </article>
-                <article class="max-w-xs">
-                    <a href="#">
-                        <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-4.png" class="mb-5 rounded-lg" alt="Image 4">
-                    </a>
-                    <h2 class="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
-                        <a href="#">Our first project with React</a>
-                    </h2>
-                    <p class="mb-4 text-gray-500 dark:text-gray-400">Over the past year, Volosoft has undergone many changes! After months of preparation.</p>
-                    <a href="#" class="inline-flex items-center font-medium text-black underline dark:text-white underline-offset-4 hover:no-underline">
-                        Read in 4 minutes
-                    </a>
-                </article>
-            </div>
-        </div>
-    </aside>
 
 
 
-    <footer class="bg-white shadow dark:bg-gray-800">
-        <div class="w-full max-w-screen-xl p-4 mx-auto md:py-8">
-            <div class="sm:flex sm:items-center sm:justify-between">
-                <a href="https://flowbite.com/" class="flex items-center mb-4 space-x-3 sm:mb-0 rtl:space-x-reverse">
-                    <img src="img/assets/logo.png" class="h-8" alt="Flowbite Logo" />
-                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">pandUMKM</span>
-                </a>
-                <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
-                    <li>
-                        <a href="#" class="hover:underline me-4 md:me-6">About</a>
-                    </li>
-                    <li>
-                        <a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a>
-                    </li>
-                    <li>
-                        <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
-                    </li>
-                    <li>
-                        <a href="#" class="hover:underline">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-            <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="" class="hover:underline">PandUMKM</a>. All Rights Reserved.</span>
-        </div>
-    </footer>
+
+    <?php include "components/footer.php"; ?>
 
 
     <script>
@@ -419,6 +261,29 @@ URL: https://flowbite.com/docs/components/typography/
                 })
             })
         })
+
+        function showLogoutAlert() {
+            // Tampilkan SweetAlert
+            Swal.fire({
+                title: "Anda yakin ingin logout?",
+                text: "Anda akan keluar dari sesi ini.",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Ya, Logout",
+                cancelButtonText: "Batal",
+            }).then((result) => {
+                // Jika pengguna mengonfirmasi logout, arahkan ke proses logout
+                if (result.isConfirmed) {
+                    window.location.href = "logout_proses.php"; // Ganti dengan URL logout_process.php yang sesuai
+                } else {
+                    // Jika pengguna membatalkan logout, kembali ke halaman chat.php
+                    window.location.href = "artikel.php"; // Ganti dengan URL chat.php yang sesuai
+                }
+            });
+        }
+        document.getElementById('logoutButton').addEventListener('click', showLogoutAlert);
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>

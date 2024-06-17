@@ -13,6 +13,9 @@
                 <li>
                     <a href="components/faq.php" class="hover:underline me-4 md:me-6">FAQ</a>
                 </li>
+                <li>
+                    <a href="components/contact.php" class="hover:underline me-4 md:me-6">Contact</a>
+                </li>
 
             </ul>
         </div>
