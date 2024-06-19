@@ -110,6 +110,9 @@
                     <li>
                         <a href="faq.php" class="hover:underline me-4 md:me-6">FAQ</a>
                     </li>
+                    <li>
+                        <a href="contact.php" class="hover:underline me-4 md:me-6">Contact</a>
+                    </li>
 
                 </ul>
             </div>

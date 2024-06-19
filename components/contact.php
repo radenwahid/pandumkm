@@ -72,12 +72,12 @@
     <div class="w-full max-w-screen-xl p-4 mx-auto md:py-8">
         <div class="sm:flex sm:items-center sm:justify-between">
             <a href="#" class="flex items-center mb-4 space-x-3 sm:mb-0 rtl:space-x-reverse">
-                <img src="img/assets/logo.png" class="h-8" alt="Flowbite Logo" />
+                <img src="../img/assets/logo.png" class="h-8" alt="pandumkm" />
                 <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">pandUMKM</span>
             </a>
             <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
                 <li>
-                    <a href="about.php" class="hover:underline me-4 md:me-6">About</a>
+                    <a href="../about.php" class="hover:underline me-4 md:me-6">About</a>
                 </li>
                 <li>
                     <a href="faq.php" class="hover:underline me-4 md:me-6">FAQ</a>

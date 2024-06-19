@@ -1,16 +1,19 @@
 <?php
+session_start();
 require 'function.php';
 
 if (isset($_POST["daftar"])) {
     if (registrasi($_POST) > 0) {
-        echo "<script> 
-            alert('data berhasil ditambahkan');     
-        </script>";
+        $_SESSION['success'] = true;
     } else {
-        echo mysqli_error($conn);
+        $_SESSION['success'] = false;
+        $_SESSION['error'] = mysqli_error($conn);
     }
+    header("Location: " . $_SERVER['PHP_SELF']);
+    exit();
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,13 +23,51 @@ if (isset($_POST["daftar"])) {
     <title>Register</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@5/dark.css" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link href="dist/output.css" rel="stylesheet">
 </head>
 
 <body>
+    <?php
+    if (isset($_SESSION['success'])) {
+        if ($_SESSION['success']) {
+            echo '<script>
+                Swal.fire({
+                    icon: "success",
+                    title: "Berhasil Daftar",
+                    text: "You have successfully registered an account.",
+                    background: "#333",
+                    color: "#fff",
+                    customClass: {
+                        popup: "dark-popup",
+                        title: "dark-title",
+                        content: "dark-content"
+                    }
+                });
+            </script>';
+            unset($_SESSION['success']);
+        } else {
+            echo '<script>
+                Swal.fire({
+                    icon: "error",
+                    title: "Gagal Daftar",
+                    text: "' . $_SESSION['error'] . '",
+                    background: "#333",
+                    color: "#fff",
+                    customClass: {
+                        popup: "dark-popup",
+                        title: "dark-title",
+                        content: "dark-content"
+                    }
+                });
+            </script>';
+            unset($_SESSION['success']);
+            unset($_SESSION['error']);
+        }
+    }
+    ?>
     <section class="flex items-center justify-center min-h-screen bg-white rounded-sm dark:bg-gray-800">
-
         <div class="flex max-w-5xl p-5 bg-white shadow-lg rounded-xl dark:bg-gray-800">
             <div class="hidden w-1/2 sm:block">
                 <img class="hidden rounded-2xl md:block" src="img/assets/5.png" alt="">
@@ -53,16 +94,15 @@ if (isset($_POST["daftar"])) {
                         </button>
                     </div>
 
-                    <input class="p-2 mt-8 border rounded-lg dark:bg-gray-600 dark:text-white" type="email" name="email" placeholder="Email" id="email">
-                    <input class="p-2 border rounded-lg dark:bg-gray-600 dark:text-white" type="text" name="nama" placeholder="Nama" id="nama">
-                    <input class="p-2 border rounded-lg dark:bg-gray-600 dark:text-white" type="text" name="nama_umkm" placeholder="nama UMKM" id="nama_umkm">
-
+                    <input class="p-2 mt-8 border rounded-lg dark:bg-gray-600 dark:text-white" type="email" name="email" placeholder="Email" id="email" required>
+                    <input class="p-2 border rounded-lg dark:bg-gray-600 dark:text-white" type="text" name="nama" placeholder="Nama" id="nama" required>
+                    <input class="p-2 border rounded-lg dark:bg-gray-600 dark:text-white" type="text" name="nama_umkm" placeholder="nama UMKM" id="nama_umkm" required>
 
                     <div>
-                        <input class="w-full p-2 border rounded-lg dark:bg-gray-600 dark:text-white" type="password" name="password" placeholder="Password" id="password" onkeyup="checkPasswordMatch()">
+                        <input class="w-full p-2 border rounded-lg dark:bg-gray-600 dark:text-white" type="password" name="password" placeholder="Password" id="password" onkeyup="checkPasswordMatch()" required>
                     </div>
                     <div>
-                        <input class="w-full p-2 border rounded-lg dark:bg-gray-600 dark:text-white" type="password" name="password2" placeholder="Konfirmasi password" id="password2" onkeyup="checkPasswordMatch()">
+                        <input class="w-full p-2 border rounded-lg dark:bg-gray-600 dark:text-white" type="password" name="password2" placeholder="Konfirmasi password" id="password2" onkeyup="checkPasswordMatch()" required>
                     </div>
 
                     <script>
@@ -118,8 +158,6 @@ if (isset($_POST["daftar"])) {
                         }
                     </script>
 
-
-
                     <div class="flex items-start mb-2">
                         <div class="flex items-center h-5">
                             <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-600 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-400 dark:focus:ring-offset-gray-400" required />
@@ -132,17 +170,12 @@ if (isset($_POST["daftar"])) {
                 </form>
                 <div class="flex items-center justify-between mt-3 text-xs">
                     <p class="dark:text-white">sudah punya akun?<a href="index.php" class="ml-2 dark:text-white">login</a></p>
-
                 </div>
             </div>
-
         </div>
-
     </section>
     <?php include "components/footer.php"; ?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
-
-
 </body>
 
 </html>

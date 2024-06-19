@@ -145,26 +145,46 @@ URL: https://flowbite.com/docs/components/typography/
             <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
             <p class="mt-12 text-5xl font-semibold text-gray-500 dark:text-white">Login</p>
             <p class="mt-4 text-xl font-light text-justify text-dark dark:text-white">Langkah pertama, login jika Anda sudah memiliki akun dengan memasukkan Email dan Password. Jika berhasil, tampilan akan seperti di bawah ini</p>
+            <img class="justify-center w-auto mt-5 border border-blue-500 rounded-lg" src="https://i.ibb.co.com/FBGgtxZ/login.jpg">
+            <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
             <p class="mt-12 text-5xl font-semibold text-gray-500 dark:text-white">Registrasi</p>
             <p class="mt-4 text-xl font-light text-justify text-dark dark:text-white">Langkah kedua, jika Anda belum memiliki akun, daftar terlebih dahulu dengan memasukkan Nama, Nama UMKM, Email, Password 1, dan Password 2 (pastikan kedua password sama). Jika berhasil, tampilan akan seperti di bawah ini.</p>
+            <img class="justify-center w-auto mt-5 border border-blue-500 rounded-lg" src="https://i.ibb.co.com/qx0HWhw/daftar.jpg">
+            <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
             <p class="mt-12 text-5xl font-semibold text-gray-500 dark:text-white">Halaman Chatbot</p>
             <p class="mt-4 text-xl font-light text-justify text-dark dark:text-white">Langkah ketiga, Anda bisa langsung menanyakan pertanyaan seputar UMKM, khususnya marketing :</p>
             <ol class="ml-12 list-decimal">
                 <li class="mt-4 text-xl font-light text-justify text-dark dark:text-white">Anda akan disambut oleh chatbot seperti tampilan di bawah ini.</li>
+                <img class="justify-center w-auto mt-5 border border-blue-500 rounded-lg" src="https://i.ibb.co.com/RQrsFRj/chat.jpg">
                 <li class="mt-4 text-xl font-light text-justify text-dark dark:text-white">Ketik “hai/hello”, maka chatbot akan menjawab seperti tampilan di bawah ini.</li>
+                <img class="justify-center w-auto mt-5 border border-blue-500 rounded-lg" src="https://i.ibb.co.com/xfh5xSm/chat1.jpg">
                 <li class="mt-4 text-xl font-light text-justify text-dark dark:text-white">Tanyakan pertanyaan UMKM, contohnya: “Kelebihan menggunakan digital marketing”, maka chatbot akan menjawab seperti tampilan di bawah ini.</li>
+                <img class="justify-center w-auto mt-5 border border-blue-500 rounded-lg" src="https://i.ibb.co.com/gr8t7gg/chat2.jpg">
                 <!-- ... -->
             </ol>
+
+            <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
             <p class="mt-12 text-5xl font-semibold text-gray-500 dark:text-white">Artikel</p>
             <p class="mt-4 text-xl font-light text-justify text-dark dark:text-white">Langkah keempat, buka halaman artikel dengan mengklik tombol artikel untuk melihat panduan dan tips trik menggunakan aplikasi PandUMKM. Tampilan artikel akan seperti di bawah ini.</p>
+            <img class="justify-center w-auto mt-5 border border-blue-500 rounded-lg" src="https://i.ibb.co.com/DVqk64Z/Artikel.png">
+            <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
             <p class="mt-12 text-5xl font-semibold text-gray-500 dark:text-white">About</p>
             <p class="mt-4 text-xl font-light text-justify text-dark dark:text-white">About
                 Langkah kelima, buka halaman About dengan mengklik tombol About untuk melihat informasi tentang PandUMKM, tim pengembang, dan kontak yang bisa dihubungi untuk tindak lanjut aplikasi PandUMKM. Tampilan halaman About akan seperti di bawah ini.
             </p>
+            <img class="justify-center w-auto mt-5 border border-blue-500 rounded-lg" src="https://i.ibb.co.com/3h9pMv6/About.png">
+            <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
             <p class="mt-12 text-5xl font-semibold text-gray-500 dark:text-white">FAQ</p>
             <p class="mt-4 text-xl font-light text-justify text-dark dark:text-white">Langkah keenam, buka halaman FAQ dengan mengklik tombol FAQ. Tampilan halaman FAQ akan seperti di bawah ini.</p>
+            <img class="justify-center w-auto mt-5 border border-blue-500 rounded-lg" src="https://i.ibb.co.com/kgq75Xg/faq.jpg">
+            <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
             <p class="mt-12 text-5xl font-semibold text-gray-500 dark:text-white">Logout</p>
             <p class="mt-4 text-xl font-light text-justify text-dark dark:text-white">Langkah ketujuh, keluar dari aplikasi dengan membuka logo foto Anda di atas, lalu klik tombol Logout.</p>
+            <img class="justify-center w-auto mt-5 border border-blue-500 rounded-lg" src="https://i.ibb.co.com/NWrFTMx/logout.jpg">
+            <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
+            <p class="mt-12 text-5xl font-semibold text-gray-500 dark:text-white">Kontak</p>
+            <p class="mt-4 text-xl font-light text-justify text-dark dark:text-white">Langkah ketujuh, keluar dari aplikasi dengan membuka logo foto Anda di atas, lalu klik tombol Logout.</p>
+            <img class="justify-center w-auto mt-5 border border-blue-500 rounded-lg" src="https://i.ibb.co.com/XVGzpxD/kontak.jpg">
 
         </article>
     </main>
