@@ -74,10 +74,14 @@ if (isset($_POST["login"])) {
 
         <div class="flex max-w-5xl p-5 bg-white shadow-lg rounded-xl dark:bg-gray-800">
             <div class="hidden w-1/2 sm:block">
-                <img class="hidden rounded-2xl md:block" src="img/assets/3.png" alt="">
+                <img class="hidden rounded-2xl md:block w-96" src="img/assets/3.png" alt="">
             </div>
             <div class="px-16 md:w-1/2 lg:mt-10">
-                <img class="justify-center w-64 md:hidden" src="img/assets/7.png">
+                <div class="flex items-center justify-center mb-5 md:justify-start">
+                    <img class="w-6 md:hidden" src="img/assets/logo.png">
+                    <span class="ml-2 text-2xl font-semibold md:hidden whitespace-nowrap dark:text-white">andUMKM</span>
+                </div>
+
                 <h2 class="text-2xl font-bold text-center dark:text-white">Login</h2>
                 <p class="mt-4 text-sm"></p>
 
@@ -100,8 +104,8 @@ if (isset($_POST["login"])) {
                 <?php endif; ?>
 
                 <form class="flex flex-col gap-4 " action="" method="post">
-                    <input class="p-2 mt-8 border rounded-lg dark:bg-gray-600 dark:text-white dark:focus:ring-blue-600" type="email" name="email" placeholder="Email" id="email">
-                    <div> <input class="w-full p-2 border rounded-lg dark:bg-gray-600 dark:text-white focus:ring-blue-600" type="password" name="password" placeholder="Password" id="password"></div>
+                    <input class="p-2 mt-8 border rounded-lg dark:bg-gray-600 dark:text-white dark:focus:ring-blue-600" type="email" name="email" placeholder="Email" id="email" required>
+                    <div> <input class="w-full p-2 border rounded-lg dark:bg-gray-600 dark:text-white focus:ring-blue-600" type="password" name="password" placeholder="Password" id="password" required></div>
                     <div class="flex items-start mb-2">
                         <div class="flex items-center h-5">
                             <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-600 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-400 dark:focus:ring-offset-gray-400" required />
@@ -122,7 +126,6 @@ if (isset($_POST["login"])) {
         </div>
     </section>
 
-    <?php include "components/footer.php"; ?>
     <script>
         // JavaScript to show loading indicator on form submission
         document.querySelector("form").addEventListener("submit", function() {

@@ -67,15 +67,15 @@ if (isset($_POST["daftar"])) {
         }
     }
     ?>
-    <section class="flex items-center justify-center min-h-screen bg-white rounded-sm dark:bg-gray-800">
-        <div class="flex max-w-5xl p-5 bg-white shadow-lg rounded-xl dark:bg-gray-800">
+    <section class="flex items-center justify-center min-h-screen bg-white rounded-sm dark:bg-gray-800 ">
+        <div class="flex max-w-5xl p-5 bg-white shadow-lg rounded-xl dark:bg-gray-800 ">
             <div class="hidden w-1/2 sm:block">
-                <img class="hidden rounded-2xl md:block" src="img/assets/5.png" alt="">
+                <img class="hidden rounded-2xl md:block w-96" src="img/assets/5.png" alt="">
             </div>
-            <div class="px-16 md:w-1/2 lg:mt-10">
+            <div class="px-16 md:w-1/2 ">
                 <img class="justify-center w-64 md:hidden" src="img/assets/7.png">
-                <h2 class="mt-1 text-2xl font-bold text-center dark:text-white">Register</h2>
-                <p class="mt-4 text-sm"></p>
+                <h2 class="text-2xl font-bold text-center dark:text-white">Register</h2>
+
 
                 <form class="flex flex-col gap-4" action="" method="post" enctype="multipart/form-data">
                     <div id="alert-2" class="flex items-center p-1 mb-1 text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 " role="alert" style="display: none;">
@@ -94,7 +94,7 @@ if (isset($_POST["daftar"])) {
                         </button>
                     </div>
 
-                    <input class="p-2 mt-8 border rounded-lg dark:bg-gray-600 dark:text-white" type="email" name="email" placeholder="Email" id="email" required>
+                    <input class="p-2 mt-8 border rounded-lg dark:bg-gray-600 dark:text-white " type="email" name="email" placeholder="Email" id="email" required>
                     <input class="p-2 border rounded-lg dark:bg-gray-600 dark:text-white" type="text" name="nama" placeholder="Nama" id="nama" required>
                     <input class="p-2 border rounded-lg dark:bg-gray-600 dark:text-white" type="text" name="nama_umkm" placeholder="nama UMKM" id="nama_umkm" required>
 
@@ -123,17 +123,16 @@ if (isset($_POST["daftar"])) {
                     </script>
 
                     <!-- Input untuk memilih file gambar -->
-                    <div class="flex items-center justify-center w-full">
-                        <label for="gambar" class="flex flex-col items-center justify-center w-full h-20 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-200 dark:hover:bg-gray-700 dark:bg-gray-600 dark:text-white">
-                            <div class="flex flex-col items-center justify-center pt-5 pb-6 mt-4">
-                                <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
-                                </svg>
-                                <p id="fileName" class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Pilih Foto Profil</span> </p>
-                            </div>
+                    <div class="flex items-center justify-center w-65">
+                        <label for="gambar" class="flex items-center justify-center w-full h-10 px-4 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-200 dark:hover:bg-gray-700 dark:bg-gray-600 dark:text-white">
+                            <svg class="w-8 h-8 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
+                            </svg>
+                            <p id="fileName" class="ml-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Pilih Foto Profil</span></p>
                             <input id="gambar" type="file" class="hidden" name="gambar" onchange="showFileName(this)" />
                         </label>
                     </div>
+
 
                     <!-- Notifikasi berhasil -->
                     <div id="successAlert" class="flex items-center hidden p-4 mb-4 text-sm text-green-800 border border-green-300 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" role="alert">
@@ -158,7 +157,7 @@ if (isset($_POST["daftar"])) {
                         }
                     </script>
 
-                    <div class="flex items-start mb-2">
+                    <div class="flex items-start mb-1">
                         <div class="flex items-center h-5">
                             <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-600 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-400 dark:focus:ring-offset-gray-400" required />
                         </div>
@@ -168,13 +167,13 @@ if (isset($_POST["daftar"])) {
 
                     <button class="py-2 text-white duration-300 bg-blue-700 rounded-xl hover:bg-blue-600 hover:scale-105" type="submit" name="daftar">Register</button>
                 </form>
-                <div class="flex items-center justify-between mt-3 text-xs">
+                <div class="flex items-center justify-between mt-1 text-xs">
                     <p class="dark:text-white">sudah punya akun?<a href="index.php" class="ml-2 dark:text-white">login</a></p>
                 </div>
             </div>
         </div>
     </section>
-    <?php include "components/footer.php"; ?>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 </body>
 

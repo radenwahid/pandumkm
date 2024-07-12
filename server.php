@@ -4,54 +4,49 @@ $koneksi = mysqli_connect("localhost", "root", "", "pandumkm1") or die("Database
 if (isset($_POST['isi_pesan'])) {
     $pesan = mysqli_real_escape_string($koneksi, $_POST['isi_pesan']);
 
-    // Query untuk mendapatkan semua pertanyaan dari database
-    $query = mysqli_query($koneksi, "SELECT pertanyaan, jawaban FROM chatbot");
+    // Periksa panjang pesan
+    if (strlen($pesan) <= 2) {
+        echo "Maaf, saya belum menemukan jawaban yang sesuai dengan pertanyaan Anda.";
+    } else {
+        // Query untuk mendapatkan semua pertanyaan dari database
+        $query = mysqli_query($koneksi, "SELECT pertanyaan, jawaban FROM chatbot");
 
-    $min_distance = PHP_INT_MAX; // Inisialisasi jarak minimum
-    $closest_question = ""; // Pertanyaan terdekat
-    $closest_answer = ""; // Jawaban untuk pertanyaan terdekat
+        $closest_question = ""; // Pertanyaan terdekat
+        $closest_answer = ""; // Jawaban untuk pertanyaan terdekat
+        $lowest_distance = PHP_INT_MAX; // Levenshtein distance terendah
 
-    // Mengecek apakah Levenshtein distance digunakan atau tidak
-    $use_levenshtein = false;
+        // Mengecek setiap pertanyaan dalam database
+        while ($row = mysqli_fetch_assoc($query)) {
+            $pertanyaan_db = $row['pertanyaan'];
+            $jawaban = $row['jawaban'];
 
-    // Mengecek setiap pertanyaan dalam database
-    while ($row = mysqli_fetch_assoc($query)) {
-        $pertanyaan_db = $row['pertanyaan'];
-        $jawaban = $row['jawaban'];
+            // Menghitung Levenshtein distance
+            $distance = levenshtein(strtolower($pesan), strtolower($pertanyaan_db));
 
-        if ($use_levenshtein) {
-            // Menghitung jarak Levenshtein antara input pengguna dan pertanyaan dalam database
-            $distance = levenshtein($pesan, $pertanyaan_db);
-
-            // Menyimpan pertanyaan dan jawaban jika jaraknya lebih dekat dari yang sebelumnya
-            if ($distance < $min_distance) {
-                $min_distance = $distance;
+            // Menentukan pertanyaan terdekat berdasarkan Levenshtein distance
+            if ($distance < $lowest_distance) {
+                $lowest_distance = $distance;
                 $closest_question = $pertanyaan_db;
                 $closest_answer = $jawaban;
-            }
-        } else {
-            // Jika Levenshtein distance tidak digunakan, langsung cocokkan pertanyaan
-            similar_text(strtolower($pesan), strtolower($pertanyaan_db), $percent);
-            if ($percent > 85) { // Treshold similarity 70%
-                $closest_question = $pertanyaan_db;
-                $closest_answer = $jawaban;
-                break; // Keluar dari loop setelah pertanyaan ditemukan
             }
         }
-    }
 
-    // Menetapkan batas jarak maksimum yang diperbolehkan untuk mempertimbangkan pertanyaan sebagai 'mendekati'
-    $threshold = 20; // Nilai ambang batas yang bisa disesuaikan
+        // Menetapkan batas Levenshtein distance maksimum yang diperbolehkan untuk mempertimbangkan pertanyaan sebagai 'mendekati'
+        $distance_threshold = 10; // Nilai ambang batas yang bisa disesuaikan
+        $low_distance_threshold = 30; // Batas bawah untuk distance rendah
 
-    if ($min_distance <= $threshold && $use_levenshtein) {
-        // Jika pertanyaan yang mendekati ditemukan dengan menggunakan Levenshtein distance, kembalikan jawaban
-        echo "Mungkin ini yang Anda maksud: $closest_question";
-    } elseif (!empty($closest_question)) {
-        // Jika pertanyaan yang mendekati ditemukan tanpa menggunakan Levenshtein distance, kembalikan jawaban
-        echo $closest_answer;
-    } else {
-        // Jika tidak ada pertanyaan yang mendekati, kembalikan pesan bahwa pertanyaan tidak tersedia
-        echo "Maaf, saya belum menemukan jawaban yang sesuai dengan pertanyaan Anda. Apakah Anda bisa menjelaskan lebih detail?";
+        if ($lowest_distance <= $distance_threshold) {
+            // Jika pertanyaan yang mendekati ditemukan dengan menggunakan Levenshtein distance, kembalikan jawaban
+            echo $closest_answer;
+            echo "<br>Levenshtein Distance: $lowest_distance";
+        } else if ($lowest_distance > $distance_threshold && $lowest_distance <= $low_distance_threshold) {
+            // Jika distance berada di bawah ambang batas tetapi di atas 10
+            echo "Maaf, saya belum menemukan jawaban yang sesuai dengan pertanyaan Anda. Apakah ini yang Anda maksud? \"$closest_question\"";
+            echo "<br>Levenshtein Distance: $lowest_distance";
+        } else {
+            // Jika distance di atas ambang batas
+            echo "Maaf, saya belum menemukan jawaban yang sesuai dengan pertanyaan Anda.";
+        }
     }
 } else {
     echo "Tidak ada data yang diterima dari AJAX.";

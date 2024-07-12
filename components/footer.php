@@ -1,5 +1,4 @@
-<footer class="bg-white shadow dark:bg-gray-800 dark:text-white">
-
+<footer class="w-full bg-white shadow dark:bg-gray-800 dark:text-white">
     <div class="w-full max-w-screen-xl p-4 mx-auto md:py-8">
         <div class="sm:flex sm:items-center sm:justify-between">
             <a href="#" class="flex items-center mb-4 space-x-3 sm:mb-0 rtl:space-x-reverse">
@@ -16,7 +15,6 @@
                 <li>
                     <a href="components/contact.php" class="hover:underline me-4 md:me-6">Contact</a>
                 </li>
-
             </ul>
         </div>
         <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />

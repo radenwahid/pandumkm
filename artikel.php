@@ -49,12 +49,13 @@ URL: https://flowbite.com/docs/components/typography/
                         <?php if (isset($_SESSION['email'])) : ?>
                             <span class="block text-sm text-gray-500 truncate dark:text-gray-400"><?php echo $_SESSION['email']; ?></span>
                         <?php endif; ?>
+                        <span class="mr-2 text-xs text-gray-900 dark:text-white">Light</span>
+                        <input data-hs-theme-switch class="relative w-[3.25rem]  h-7 mt-2 bg-gray-300 checked:bg-none checked:bg-blue-600 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 ring-1 ring-transparent focus:border-slate-700 focus:ring-slate-700 focus:outline-none appearance-none
 
-                        <input data-hs-theme-switch class="relative w-[3.25rem]  h-7 mt-2 bg-gray-100 checked:bg-none checked:bg-blue-600 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 ring-1 ring-transparent focus:border-slate-700 focus:ring-slate-700 focus:outline-none appearance-none
+before:inline-block before:size-6 before:bg-gray-200 checked:before:bg-blue-200 before:translate-x-0 checked:before:translate-x-full before:shadow before:rounded-full before:transform before:ring-0 before:transition before:ease-in-out before:duration-200
 
-            before:inline-block before:size-6 before:bg-white checked:before:bg-blue-200 before:translate-x-0 checked:before:translate-x-full before:shadow before:rounded-full before:transform before:ring-0 before:transition before:ease-in-out before:duration-200
-            
-            after:absolute after:end-1.5 after:top-[calc(50%-0.40625rem)] after:w-[.8125rem] after:h-[.8125rem] after:bg-no-repeat after:bg-[right_center] after:bg-[length:.8125em_.8125em] after:bg-[url('../svg/docs/moon-stars.svg')] checked:after:bg-[url('../svg/docs/brightness-high.svg')] after:transform after:transition-all after:ease-in-out after:duration-200 after:opacity-70 checked:after:start-1.5 checked:after:end-auto" type="checkbox" id="darkSwitch">
+after:absolute after:end-1.5 after:top-[calc(50%-0.40625rem)] after:w-[.8125rem] after:h-[.8125rem] after:bg-no-repeat after:bg-[right_center] after:bg-[length:.8125em_.8125em] after:bg-[url('../svg/docs/moon-stars.svg')] checked:after:bg-[url('../svg/docs/brightness-high.svg')] after:transform after:transition-all after:ease-in-out after:duration-200 after:opacity-70 checked:after:start-1.5 checked:after:end-auto" type="checkbox" id="darkSwitch">
+                        <span class="ml-2 text-xs text-gray-900 dark:text-white">Dark</span>
                     </div>
                     <ul class="py-2" aria-labelledby="user-menu-button">
 
@@ -98,7 +99,7 @@ URL: https://flowbite.com/docs/components/typography/
 
     <main class="pt-8 pb-16 antialiased bg-white lg:pt-16 lg:pb-24 dark:bg-gray-800">
         <div class="flex justify-between max-w-screen-xl px-4 mx-auto ">
-            <article class="w-full max-w-4xl p-6 mx-auto bg-white rounded-lg shadow-lg dark:bg-blue-700 dark:border-gray-700">
+            <article class="w-full max-w-4xl p-6 mx-auto bg-blue-700 rounded-lg shadow-lg dark:bg-blue-700 dark:border-gray-700">
                 <div class="flex flex-col items-center justify-center mb-6 md:flex-row md:items-center md:justify-between">
                     <h1 class="text-3xl font-bold text-gray-800 dark:text-white md:mb-0">Panduan Pengguna: Tips & Trik</h1>
                     <img src="img/assets/umkm.jpeg" alt="Logo" class="object-cover mt-6 rounded-lg md:mt-0 md:ml-6 w-72 md:w-96 aspect-w-1 aspect-h-1">
@@ -112,14 +113,14 @@ URL: https://flowbite.com/docs/components/typography/
                 <div class="mt-12">
                     <!-- <h2 class="text-base font-bold text-gray-800 dark:text-white">Socials</h2> -->
                     <ul class="flex mt-4 space-x-4 ">
-                        <li class="flex items-center justify-center transition duration-300 ease-in-out delay-150 bg-gray-900 rounded-full w-7 h-7 dark:bg-blue-700 outline outline-offset-0 outline-cyan-white dark:text-white shrink-0 hover:-translate-y-1 hover:scale-110 hover:bg-blue-800">
+                        <li class="flex items-center justify-center transition duration-300 ease-in-out delay-150 bg-blue-500 rounded-full w-7 h-7 dark:bg-blue-700 outline outline-offset-0 outline-cyan-white dark:text-white shrink-0 hover:-translate-y-1 hover:scale-110 hover:bg-blue-800">
                             <a href="https://www.facebook.com/profile.php?id=100004774096922" target="_blank">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" fill='#ffff' viewBox="0 0 24 24">
                                     <path d="M6.812 13.937H9.33v9.312c0 .414.335.75.75.75l4.007.001a.75.75 0 0 0 .75-.75v-9.312h2.387a.75.75 0 0 0 .744-.657l.498-4a.75.75 0 0 0-.744-.843h-2.885c.113-2.471-.435-3.202 1.172-3.202 1.088-.13 2.804.421 2.804-.75V.909a.75.75 0 0 0-.648-.743A26.926 26.926 0 0 0 15.071 0c-7.01 0-5.567 7.772-5.74 8.437H6.812a.75.75 0 0 0-.75.75v4c0 .414.336.75.75.75zm.75-3.999h2.518a.75.75 0 0 0 .75-.75V6.037c0-2.883 1.545-4.536 4.24-4.536.878 0 1.686.043 2.242.087v2.149c-.402.205-3.976-.884-3.976 2.697v2.755c0 .414.336.75.75.75h2.786l-.312 2.5h-2.474a.75.75 0 0 0-.75.75V22.5h-2.505v-9.312a.75.75 0 0 0-.75-.75H7.562z" data-original="#000000" />
                                 </svg>
                             </a>
                         </li>
-                        <li class="flex items-center justify-center transition duration-300 ease-in-out delay-150 bg-white rounded-full w-7 h-7 outline outline-offset-0 dark:bg-blue-700 dark:text-white hover:-translate-y-1 hover:scale-110 hover:bg-blue-800 shrink-0">
+                        <li class="flex items-center justify-center transition duration-300 ease-in-out delay-150 bg-blue-500 rounded-full w-7 h-7 outline outline-offset-0 dark:bg-blue-700 dark:text-white hover:-translate-y-1 hover:scale-110 hover:bg-blue-800 shrink-0">
                             <a href="https://www.instagram.com/fthrnisativa/" target="_blank">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" fill='#fff' viewBox="0 0 24 24">
                                     <path d="M12 9.3a2.7 2.7 0 1 0 0 5.4 2.7 2.7 0 0 0 0-5.4Zm0-1.8a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Zm5.85-.225a1.125 1.125 0 1 1-2.25 0 1.125 1.125 0 0 1 2.25 0ZM12 4.8c-2.227 0-2.59.006-3.626.052-.706.034-1.18.128-1.618.299a2.59 2.59 0 0 0-.972.633 2.601 2.601 0 0 0-.634.972c-.17.44-.265.913-.298 1.618C4.805 9.367 4.8 9.714 4.8 12c0 2.227.006 2.59.052 3.626.034.705.128 1.18.298 1.617.153.392.333.674.632.972.303.303.585.484.972.633.445.172.918.267 1.62.3.993.047 1.34.052 3.626.052 2.227 0 2.59-.006 3.626-.052.704-.034 1.178-.128 1.617-.298.39-.152.674-.333.972-.632.304-.303.485-.585.634-.972.171-.444.266-.918.299-1.62.047-.993.052-1.34.052-3.626 0-2.227-.006-2.59-.052-3.626-.034-.704-.128-1.18-.299-1.618a2.619 2.619 0 0 0-.633-.972 2.595 2.595 0 0 0-.972-.634c-.44-.17-.914-.265-1.618-.298-.993-.047-1.34-.052-3.626-.052ZM12 3c2.445 0 2.75.009 3.71.054.958.045 1.61.195 2.185.419A4.388 4.388 0 0 1 19.49 4.51c.457.45.812.994 1.038 1.595.222.573.373 1.227.418 2.185.042.96.054 1.265.054 3.71 0 2.445-.009 2.75-.054 3.71-.045.958-.196 1.61-.419 2.185a4.395 4.395 0 0 1-1.037 1.595 4.44 4.44 0 0 1-1.595 1.038c-.573.222-1.227.373-2.185.418-.96.042-1.265.054-3.71.054-2.445 0-2.75-.009-3.71-.054-.958-.045-1.61-.196-2.185-.419A4.402 4.402 0 0 1 4.51 19.49a4.414 4.414 0 0 1-1.037-1.595c-.224-.573-.374-1.227-.419-2.185C3.012 14.75 3 14.445 3 12c0-2.445.009-2.75.054-3.71s.195-1.61.419-2.185A4.392 4.392 0 0 1 4.51 4.51c.45-.458.994-.812 1.595-1.037.574-.224 1.226-.374 2.185-.419C9.25 3.012 9.555 3 12 3Z">
