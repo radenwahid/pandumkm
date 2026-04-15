@@ -30,7 +30,7 @@ if (isset($_POST["email"])) {
                 $mail->Host = 'mail.smtp2go.com'; // SMTP server address
                 $mail->SMTPAuth = true;
                 $mail->Username = 'PanduMKM'; // Your SMTP username
-                $mail->Password = 'vBLLdiigtHV3YMsJ'; // Your SMTP password
+                $mail->Password = 'password'; // Your SMTP password
                 $mail->SMTPSecure = 'tls';
                 $mail->Port = 2525;
 
