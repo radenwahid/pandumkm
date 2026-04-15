@@ -14,7 +14,7 @@ try {
     $mail->Host = 'mail.smtp2go.com'; // Replace with your SMTP server hostname
     $mail->SMTPAuth = true;
     $mail->Username = 'PanduMKM'; // Replace with your SMTP username
-    $mail->Password = 'vBLLdiigtHV3YMsJ'; // Replace with your SMTP password
+    $mail->Password = 'password'; // Replace with your SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 2525; // TCP port to connect to
     $mail->isHtml(true);
